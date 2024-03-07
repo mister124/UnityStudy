@@ -82,3 +82,11 @@ private float[] numbers; // ex)
 // yield return new WaitForSeconds(~f);
 // 해당 코루틴이 일시 중지되고, 지정된 시간이 지난 후에 다음 코드가 실행되도록 합니다
 
+// 대용량 파일 GitHub upload
+// 1. 처음 project 생성 시 Unity에 대한 .gitignore 파일 생성(후에도 생성 가능)
+// 파일을 Assets, Packages 등이 있는 곳에 위치
+// 2. 위에서 설명했던 위치의 부모 위치에서 Open Git Bash Here 선택
+// 3. lfs 관련 입력
+// git lfs install
+// git lfs "*.zip"
+// git add .gitattributes 
