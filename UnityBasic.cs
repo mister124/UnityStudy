@@ -1,15 +1,112 @@
-// 조건문
-    if () {
-        pass
-    } else if () {
-        pass
-    }
+// 1. 변수
+// 지역 변수: 함수 안에서 선언된 변수(다른 곳에서 접근 불가)
+// 전역 변수: 함수 바깥에서 선언된 변수
+// 정수형 데이터
+int level = 5;
+// 실수형 데이터, 끝에 f
+float strength = 15.5f;
+// 문자열 데이터, "string", 'char'
+string playerName = "나검사";
+// 논리형 데이터
+bool isFullLevel = true;
 
-// 반복문
-foreach (float x in arrX) {
-    pass
+// 2. 그룹형 변수
+// 길이: .Length
+string[] monsters = { "슬라임", "사막뱀", "악마" };
+// ex) monsters[0], monsters[1], monsters[2]
+int[] monsterLevel = new int[3];
+monsterLevel[0] = 1;
+monsterLevel[1] = 6;
+monsterLevel[2] = 20;
+// 기능이 추가된 가변형 그룹 변수: 배열과 다르게 요소 추가, 제거 가능, 길이: .Count
+List<string> items = new List<string>;
+items.Add("생명물약30");
+items.Add("마나물약30");
+items.RemoveAt(0);
+
+// Debug.Log("Hello unity!"); // console print
+
+// 3. 연산자
+int exp = 1500;
+exp = 1500 + 320;
+exp -= 10;
+level = exp / 300;
+strength = level * 3.1f;
+int nextExp = 300 - (exp % 300)
+
+string title = "전설의";
+Debug.Log(title + playerName);
+
+int fullLevel = 99;
+isFullLevel = level == fullLevel;
+bool isEndTutorial = level > 10;
+
+int mana = 15;
+bool isBadCondition = health <= 50 && mana <= 20; // and 연산자
+bool isBadCondition = health <= 50 || mana <= 20; // or 연산자
+// 삼항 연산자
+string condition = isBadCondition ? "true" : "false";
+
+// 4. 키워드
+// 키워드: 프로그래밍 언어를 구성하는 특별한 단어
+// int, float string bool new List
+
+// 5. 조건문
+if (true)
+{
+    break;
 }
-// 배열의 각 요소를 순회하는 구문
+elseif(true) {
+    break;
+} else (true) {
+    break;
+}
+
+switch (monster[1])
+{
+    case "슬라임":
+    case "사막뱀":
+        break;
+    case "악마":
+        break;
+    case "골렘":
+        break;
+    default: // 모든 case를 통과한 수 실행
+        break;
+
+}
+
+// 6. 반복문
+while (true)
+{
+    health--;
+}
+
+for (int count = 0; count < 10; count++)
+{
+    health++;
+}
+// 그룹형 변수 탐색 특화
+foreach (string monster in monsters)
+{
+    break;
+}
+
+// 7. 함수 (method): 기능을 편리하게 사용하도록 구성된 영역
+int Heal(int currentHealth)
+{
+    currentHealth += 10;
+    return currentHealth;
+}
+
+void Heal()
+{
+    health += 10;
+}
+
+// 8. 클래스: 하나의 instance와 대응하는 로직
+// 접근자: private: 외부 클래스에 비공개, dafault, public: 외부 클래스에 공개;
+// Actor player = new Actor();
 
 // Vector3
 // transform.position의 타입은 Vector3입니다. Vector3는 3차원 공간에서의 점을 나타내며, x, y, z의 3개의 부동 소수점 숫자로 구성됩니다. 각각의 값은 오브젝트의 세계 좌표계에서의 

@@ -3,6 +3,7 @@
 // : (콜론): 클래스가 다른 클래스를 상속받을 때 사용되는 키워드입니다. 여기서는 MonoBehaviour 클래스를 상속받습니다.
 // MonoBehaviour: Unity에서 모든 스크립트 클래스가 상속받는 기본 클래스입니다. MonoBehaviour 클래스는 Unity의 게임 오브젝트에 부착하여 스크립트로서 작동할 수 있도록 합니다. 
 // 이 클래스는 Unity에서 제공하는 다양한 기능과 이벤트에 접근할 수 있도록 해줍니다.
+// 상속: ex) MonoBehaviour의 멤버변수, 함수 사용 가능
 
 // Rigidbody2D
 // Rigidbody2D 클래스는 Unity에서 2D 물리 시뮬레이션을 처리하기 위한 주요 컴포넌트 중 하나입니다.
@@ -32,6 +33,20 @@
 
 // Transform
 // Transform 클래스는 Unity에서 모든 게임 오브젝트(GameObject)에 기본적으로 포함되어 있는 컴포넌트 중 하나입니다. 이 클래스는 게임 오브젝트의 위치, 회전 및 크기를 관리합니다.
+// transform.position
+// transform.position은 Unity 엔진에서 게임 오브젝트의 위치를 나타내는 속성입니다. Unity의 3D 공간에서 모든 게임 오브젝트는 Transform 컴포넌트를 가지고 있으며, 이 컴포넌트는 
+// 게임 오브젝트의 위치(position), 회전(rotation), 크기(scale) 등을 제어합니다.
+// + 로컬 위치 vs. 세계 위치
+// transform.position은 오브젝트의 세계 위치를 나타냅니다. 이와 대비되는 개념으로 로컬 위치가 있으며, 이는 transform.localPosition을 통해 접근할 수 있습니다. 로컬 위치는 
+// 오브젝트의 부모 게임 오브젝트에 대한 상대적 위치를 나타냅니다. 부모 오브젝트가 없는 경우, transform.position과 transform.localPosition은 동일한 값을 가집니다.
+// + 주의 사항
+// 1. transform.position을 자주 변경하는 것은 성능에 영향을 줄 수 있습니다. 가능하면 물리 엔진을 사용하여 오브젝트를 이동시키거나, 필요한 경우에만 위치를 업데이트하세요.
+// 2. transform.position을 수정할 때는 항상 새로운 Vector3 값을 할당하거나, 기존 값을 적절히 수정하는 방법을 사용해야 합니다. 예를 들어, transform.position.x += 1과 같은 
+// 직접적인 수정은 허용되지 않으며, 대신 전체 Vector3 값을 새로 할당해야 합니다.
+
+// Vector2
+// Method
+// MoveTowards(현재위치, 목표위치, 속도혹은 시간): 등속이동 함수
 
 // Time
 // 속성
@@ -66,9 +81,11 @@
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    void Awake() {
-    if (instance == null) {
-        instance = this;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
         }
     }
 }
