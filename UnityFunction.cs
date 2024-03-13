@@ -7,7 +7,7 @@ void Start()
 
 
 // Update()
-void Update() 
+void Update()
 {
     pass
 }
@@ -15,11 +15,13 @@ void Update()
 
 
 // Destroy()
-Destroy(gameObject, 파괴 전 대기 시간(초)); 
+Destroy(gameObject, 파괴 전 대기 시간(초));
 
 // OnTriggerEnter2D(Collider2D other)
-private void OnTriggerEnter2D(Collider2D other) {
-    if (other.gameObject.tag == "Coin") {
+private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.gameObject.tag == "Coin")
+    {
         // 코인과의 충돌 로직 처리
         Destroy(other.gameObject); // 코인 게임 오브젝트 파괴
     }
@@ -63,13 +65,18 @@ Instantiate(coin, transform.position, Quaternion.identity); // ex)
 // 일반적으로 코루틴은 특정 조건을 만족할 때까지 반복되는 무한 루프보다는, 일정 횟수의 반복이나 특정 조건을 충족할 때까지 반복되도록 구현됩니다.
 
 // FindObjectOfType<Class>()
-// Scene에서 특정 타입의 오브젝트를 찾아서 가져오는 역할을 합니다.
-// 만약 Scene에 특정 타입의 오브젝트가 여러 개 있다면, 첫 번째로 발견된 오브젝트를 반환합니다.
+// 지정된 타입의 컴포넌트를 씬 내에서 찾아서 반환합니다. 이 메서드는 제네릭 타입 파라미터를 사용하여 검색할 컴포넌트의 타입을 지정합니다.
+// 주어진 타입의 첫 번째 인스턴스를 찾은 후 즉시 반환하며, 같은 타입의 다른 객체가 존재하더라도 무시합니다. 
 
 // Invoke("MethodName", second)
 // 지정된 메서드를 일정 시간이 지난 후에 실행하는 역할을 합니다.
 
 // Awake()
-void Awake() {
+void Awake()
+{
     pass
 }
+
+private void OnMouseDown()
+// 메서드는 Unity 게임 개발 엔진에서 사용되는 이벤트 핸들러 중 하나로, Unity의 MonoBehaviour 클래스에서 제공됩니다. 
+// 이 메서드는 게임 오브젝트에 부착된 Collider 컴포넌트를 가진 오브젝트를 마우스로 클릭했을 때 자동으로 호출됩니다. 게임이 실행 중일 때 해당 오브젝트가 활성화되어 있어야 합니다.
